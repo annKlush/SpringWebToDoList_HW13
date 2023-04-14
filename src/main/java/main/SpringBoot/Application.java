@@ -16,6 +16,7 @@ public class Application implements CommandLineRunner {
     private NoteService noteService;
 
     public static void main(String[] args) {
+        new DataInit().initDb();
         try (ConfigurableApplicationContext context = SpringApplication.run(Application.class, args)) {
             Thread.sleep(200000);
         } catch (InterruptedException e) {
